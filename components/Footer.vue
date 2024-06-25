@@ -1,81 +1,17 @@
-<script lang="ts" setup>
-import { ref } from "vue";
-
-const footerNavigation = ref({
-  solutions: [
-    { name: 'Marketing', href: '#' },
-    { name: 'Analytics', href: '#' },
-    { name: 'Commerce', href: '#' },
-    { name: 'Insights', href: '#' },
-  ],
-  support: [
-    { name: 'Pricing', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Guides', href: '#' },
-    { name: 'API Status', href: '#' },
-  ],
-  company: [
-    { name: 'About', href: '#' },
-    { name: 'Blog', href: '#' },
-    { name: 'Jobs', href: '#' },
-    { name: 'Press', href: '#' },
-    { name: 'Partners', href: '#' },
-  ],
-  legal: [
-    { name: 'Claim', href: '#' },
-    { name: 'Privacy', href: '#' },
-    { name: 'Terms', href: '#' },
-  ],
-})
-
-</script>
+<script lang="ts" setup></script>
 
 <template>
-    <!-- Footer -->
-    <footer class="mt-32 bg-gray-900 sm:mt-56" aria-labelledby="footer-heading">
-      <h2 id="footer-heading" class="sr-only">Footer</h2>
-      <div class="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
-        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-          <Logo />
-          <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-            <div class="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 class="text-sm font-semibold leading-6 text-white">Solutions</h3>
-                <ul role="list" class="mt-6 space-y-4">
-                  <li v-for="item in footerNavigation.solutions" :key="item.name">
-                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="mt-10 md:mt-0">
-                <h3 class="text-sm font-semibold leading-6 text-white">Support</h3>
-                <ul role="list" class="mt-6 space-y-4">
-                  <li v-for="item in footerNavigation.support" :key="item.name">
-                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="md:grid md:grid-cols-2 md:gap-8">
-              <div>
-                <h3 class="text-sm font-semibold leading-6 text-white">Company</h3>
-                <ul role="list" class="mt-6 space-y-4">
-                  <li v-for="item in footerNavigation.company" :key="item.name">
-                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="mt-10 md:mt-0">
-                <h3 class="text-sm font-semibold leading-6 text-white">Legal</h3>
-                <ul role="list" class="mt-6 space-y-4">
-                  <li v-for="item in footerNavigation.legal" :key="item.name">
-                    <a :href="item.href" class="text-sm leading-6 text-gray-300 hover:text-white">{{ item.name }}</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+  <footer class="bg-gray-900">
+    <div class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+      <div class="flex justify-center space-x-6 md:order-2">
+        <a v-for="item in navigation" :key="item.name" :href="item.href" class="text-gray-400 hover:text-gray-500">
+          <span class="sr-only">{{ item.name }}</span>
+          <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
+        </a>
       </div>
-    </footer>
+      <div class="mt-8 md:order-1 md:mt-0">
+          <Logo />
+      </div>
+    </div>
+  </footer>
 </template>
