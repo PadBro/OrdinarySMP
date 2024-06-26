@@ -33,13 +33,12 @@ const mobileMenuOpen = ref(false);
         </button>
       </div>
       <div class="hidden lg:flex lg:gap-x-12">
-        <a
+        <NuxtLink
           v-for="item in navigation"
           :key="item.name"
-          :href="item.href"
+          :to="item.href"
           class="text- text-sm font-semibold leading-6"
-          >{{ item.name }}</a
-        >
+          >{{ item.name }}</NuxtLink>
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end" />
     </nav>
