@@ -3,7 +3,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/eslint"],
   app: {
-    baseURL: '/OrdinarySMP/'
+    baseURL: '/OrdinarySMP/',
+    cdnURL: '/OrdinarySMP/',
   },
   runtimeConfig: {
     public: {
