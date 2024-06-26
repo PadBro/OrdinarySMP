@@ -1,7 +1,9 @@
 <template>
-  <div class="flex flex-col h-screen justify-between">
-    <Header />
-    <NuxtPage />
-    <Footer />
+  <div class="flex h-screen flex-col justify-between">
+    <LayoutHeader />
+    <div class="grow">
+      <NuxtPage />
+    </div>
+    <LayoutFooter />
   </div>
 </template>

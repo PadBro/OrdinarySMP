@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        ordinaryRed: '#ce361e',
-        ordinaryOrange: '#f0833a',
-      }
+        ordinaryRed: "#ce361e",
+        ordinaryOrange: "#f0833a",
+      },
     },
   },
   plugins: [],
-}
+};
