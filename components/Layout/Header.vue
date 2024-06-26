@@ -40,7 +40,8 @@ const mobileMenuOpen = ref(false);
           :key="item.name"
           :to="item.href"
           class="text- text-sm font-semibold leading-6"
-          >{{ item.name }}</NuxtLink>
+          >{{ item.name }}</NuxtLink
+        >
       </div>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end" />
     </nav>
@@ -67,12 +68,12 @@ const mobileMenuOpen = ref(false);
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
-              <a
+              <NuxtLink
                 v-for="item in navigation"
                 :key="item.name"
-                :href="item.href"
+                :to="item.href"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >{{ item.name }}</a
+                >{{ item.name }}</NuxtLink
               >
             </div>
           </div>
