@@ -1,0 +1,24 @@
+name: Lint + Prettier
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  run-linters:
+    name: Lint + Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: v16.6.1
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+      - name: Run linter + prettier
+        run: yarn lint:ci
