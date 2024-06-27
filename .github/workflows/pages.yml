@@ -3,11 +3,9 @@ name: Deploy to GitHub Pages
 on:
   workflow_run:
     workflows: ["Lint + Prettier"]
+    branches: [main]
     types:
       - completed
-  push:
-    branches:
-      - main
 jobs:
   build:
     runs-on: ubuntu-latest
