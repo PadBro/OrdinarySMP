@@ -10,8 +10,12 @@ defineProps<{
 
 <template>
   <QuoteBase>
-    <QuoteImage v-if="orientation === 'left'" :src="src" />
+    <QuoteImage :class="{ 'xl:hidden': orientation === 'right' }" :src="src" />
     <QuoteText :text="text" :name="name" :title="title" />
-    <QuoteImage v-if="orientation === 'right'" :src="src" />
+    <QuoteImage
+      :class="{ 'xl:hidden': orientation === 'left' }"
+      class="hidden xl:block"
+      :src="src"
+    />
   </QuoteBase>
 </template>

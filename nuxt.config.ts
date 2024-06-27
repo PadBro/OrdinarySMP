@@ -4,9 +4,9 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxt/eslint"],
   runtimeConfig: {
     public: {
-      domain: "",
-      mapSubdomain: "",
-      serverSubdomain: "",
+      domain: "ordinary-smp.com",
+      mapSubdomain: "map",
+      serverSubdomain: "play",
     },
   },
 });
